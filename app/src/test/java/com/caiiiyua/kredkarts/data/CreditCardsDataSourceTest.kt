@@ -21,10 +21,12 @@ class CreditCardsDataSourceTest {
     fun `addCreditCard adds a credit card to the dataSource`() = runTest {
         //Given
         val creditCard = CreditCardDto(3, "3456-7890-1234-5678", "2025-02", "amex", "12-04-24")
-//When
+
+        //When
         dataSource.addCreditCard(creditCard)
         val result = dataSource.getCreditCards().first()
 
+        //Then
         assertEquals(listOf(creditCard), result)
     }
 
